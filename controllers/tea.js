@@ -30,18 +30,26 @@ router.get('/seed', (req, res) => {
 // Index Route
 
 router.get('/tea', (req, res) => {
-  Tea.find({}, (error, allTeas) => {
-    res.render('tea/index.ejs',
-    {
-      tea: allTeas
+  if (req.session.username) {
+    Tea.find({}, (error, allTeas) => {
+      res.render('tea/index.ejs',
+      {
+        tea: allTeas
+      });
     });
-  });
+  } else {
+    res.redirect('/')
+}
 });
 
 // New Route
 
 router.get('/tea/new', (req, res) => {
-  res.render('tea/new.ejs')
+  if (req.session.username) {
+    res.render('tea/new.ejs')
+  } else {
+    res.redirect('/')
+}
 });
 
 router.post('/tea', (req, res) => {
@@ -53,22 +61,30 @@ router.post('/tea', (req, res) => {
 // Show Route
 
 router.get('/tea/:id', (req, res) => {
-  Tea.findById(req.params.id, (err, foundTea) => {
-    res.render('tea/show.ejs' , {
-      tea:foundTea
-    })
-  });
+  if (req.session.username) {
+    Tea.findById(req.params.id, (err, foundTea) => {
+      res.render('tea/show.ejs' , {
+        tea:foundTea
+      })
+    });
+  } else {
+    res.redirect('/')
+}
 });
 
 
 // Edit Route
 
 router.get('/tea/:id/edit', (req, res) => {
-  Tea.findById(req.params.id, (err, foundTea) => {
-    res.render('tea/edit.ejs', {
-      tea:foundTea
+  if (req.session.username) {
+    Tea.findById(req.params.id, (err, foundTea) => {
+      res.render('tea/edit.ejs', {
+        tea:foundTea
+      });
     });
-  });
+} else {
+  res.redirect('/')
+}
 });
 
 router.put('/tea/:id', (req, res) => {
