@@ -61,6 +61,7 @@ app.get('/', (req, res) => {
   res.render('home.ejs')
 })
 
+// Logout
 app.delete('/destroy', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -70,6 +71,7 @@ app.delete('/destroy', (req, res) => {
     }
   })
 })
+
 //--------------------
 //Listener
 //--------------------

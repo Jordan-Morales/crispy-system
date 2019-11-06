@@ -3,10 +3,12 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/users.js');
 
+// login page
 router.get('/sessions/new', (req, res) => {
   res.render('sessions/new.ejs')
 })
 
+//login function
 router.post('/sessions', (req, res) => {
   User.findOne({username:req.body.username}, (error, foundUser) => {
     if(foundUser === null){

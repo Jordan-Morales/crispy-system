@@ -94,7 +94,7 @@ router.put('/tea/:id', (req, res) => {
 });
 
 
-// Delte Function
+// Delete Function
 router.delete('/tea/:id', (req, res) => {
   Tea.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect('/tea')
