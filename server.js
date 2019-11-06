@@ -36,7 +36,7 @@ app.use(express.urlencoded( {extended: false} ));
 app.use(methodOverride('_method'));
 // open session
 app.use(session({
-  secret:'primary',
+  secret:'O6sLoDV18O',
   resave: false,
   saveUninitialized: false
 }))
