@@ -6,8 +6,15 @@
   <body>
     <% include ../partials/header.ejs %>
 
-    <h1>session page</h1>
+    <h1>Log In</h1>
 
+    <div class="container">
+      <form action="/sessions" method="POST">
+        <input type="text" name="username"><br/>
+        <input type="password" name="password"><br/>
+        <input type="submit" value="Log In">
+      </form>
+    </div>
 
     <% include ../partials/footer.ejs %>
   </body>

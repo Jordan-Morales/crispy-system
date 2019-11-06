@@ -6,8 +6,15 @@
   <body>
     <% include ../partials/header.ejs %>
 
-    <h1>new user page</h1>
+    <h1>Create Your Account</h1>
 
+    <div class="container">
+      <form action="/users" method="POST">
+        Username: <input type="text" name="username"><br/>
+        Password: <input type="password" name="password"><br/>
+        <input type="submit" value="Register">
+      </form>
+    </div>
 
     <% include ../partials/footer.ejs %>
   </body>

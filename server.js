@@ -18,7 +18,7 @@ console.log(PORT);
 // DATABASE
 //--------------------
 const MONGODB_URI= process.env.MONGODB_URI
-mongoose.connect( MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect( MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true})
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -49,12 +49,27 @@ app.use(session({
 const teaController = require('./controllers/tea.js');
 app.use(teaController);
 
+const usersController = require('./controllers/users.js');
+app.use(usersController);
+
+const sessionsController = require('./controllers/sessions.js');
+app.use(sessionsController);
+
+
 //main loading page containing welcome message and links to login / signup
 app.get('/', (req, res) => {
   res.render('home.ejs')
 })
 
-
+app.delete('/destroy', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/')
+    }
+  })
+})
 //--------------------
 //Listener
 //--------------------
