@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <% include ../partials/head.ejs %>
-  </head>
-  <body>
-    <% include ../partials/header.ejs %>
-    <div class="container">
-      <h1>index after login</h1>
-      <ul>
-        <% for (let i = 0; i < tea.length; i++) { %>
-          <li><a href="/tea/<%=tea[i].id%>"><%=tea[i].name%></a> - <%=tea[i].type%></li>
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body>
+  <% include ../partials/header.ejs %>
+  <div class="container">
+    <h1>index after login</h1>
+    <div class="row">
+      <% for (let i = 0; i < tea.length; i++) { %>
+        <div class="col s4">
+          <div class="card small blue-grey">
+            <div class="card-content white-text">
+              <div class="card-image">
+              <a class="grey-text" href="/tea/<%=tea[i].id%>">
+                <img src="/img/broken.jpg" alt="<%=tea[i].name%>">
+                <span class="card-title"><%=tea[i].name%></span>
+              </div>
+              <%=tea[i].name%></a> - <%=tea[i].type%>
+            </div>
+          </div>
+        </div>
         <% } %>
-      </ul>
+      </div>
       <a href="/tea/new">Create New Tea</a>
     </div>
 
     <% include ../partials/footer.ejs %>
   </body>
-</html>
+  </html>

@@ -55,11 +55,18 @@ app.use(usersController);
 const sessionsController = require('./controllers/sessions.js');
 app.use(sessionsController);
 
+const brewsController = require('./controllers/brews.js');
+app.use(brewsController);
+
 
 //main loading page containing welcome message and links to login / signup
 app.get('/', (req, res) => {
   res.render('home.ejs')
-})
+});
+
+app.get('/about', (req, res) => {
+  res.render('about.ejs')
+});
 
 // Logout
 app.delete('/destroy', (req, res) => {
@@ -71,6 +78,8 @@ app.delete('/destroy', (req, res) => {
     }
   })
 })
+
+
 
 //--------------------
 //Listener

@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <% include ./partials/head.ejs %>
-  </head>
-  <body>
-    <% include ./partials/header.ejs %>
-
-    <h1>Welcome to the Best Tea Resource</h1>
-    <div class="container">
-      <div class="cred">
-        <a href="sessions/new">Log In</a><br/>
-        <a href="users/new">Sign Up</a>
+<head>
+  <% include ./partials/head.ejs %>
+</head>
+<body>
+  <% include ./partials/preheader.ejs %>
+  <div class="container">
+      <h1>Tea-licious</h1>
+      <h4>A Tea Resource</h1>
+    <div class="row">
+      <div class="col m6">
+        <span class="flow-text"><a href="sessions/new">Log In</a></span>
+      </div>
+      <div class="col m6">
+        <span class="flow-text"><a href="users/new">Sign Up</a></span>
       </div>
     </div>
+    <div class="divider"/>
+    <div class="section">
+      <p></p>
+    </div>
+  </div>
 
-    <% include ./partials/footer.ejs %>
-  </body>
+  <% include ./partials/footer.ejs %>
+</body>
 </html>
