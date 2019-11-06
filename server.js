@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 const session = require('express-session')
 const db = mongoose.connection;
+const cloudinary = require('cloudinary').v2;
 require('dotenv').config();
 //--------------------
 // PORT
@@ -22,8 +23,22 @@ mongoose.connect( MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: tru
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+db.on('connected', () => console.log('mongo connected: ', MONGODB_URI, '||||', CLOUDINARY_URL));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
+//--------------------
+// Cloudinary
+//--------------------
+const CLOUDINARY_URL = process.env.CLOUDINARY_URL
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
+
+// Server-side Image Uploader //
+// cloudinary.uploader.upload("public/  .jpg",
+// function(result) { console.log(result) })
 
 //--------------------
 // Middleware
@@ -78,7 +93,7 @@ app.delete('/destroy', (req, res) => {
     }
   })
 })
-
+//
 
 
 //--------------------
