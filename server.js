@@ -5,6 +5,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
+const session = require('express-session')
 const db = mongoose.connection;
 require('dotenv').config();
 //--------------------
@@ -27,21 +28,36 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //--------------------
 // Middleware
 //--------------------
+// open public folder
 app.use(express.static('public'));
-
+//urlencoding false
 app.use(express.urlencoded( {extended: false} ));
+// opens method override function
 app.use(methodOverride('_method'));
+// open session
+app.use(session({
+  secret:'primary',
+  resave: false,
+  saveUninitialized: false
+}))
 
 //--------------------
 //Routes
 //--------------------
 
+//controllers
+const teaController = require('./controllers/tea.js');
+app.use(teaController);
 
+//main loading page containing welcome message and links to login / signup
 app.get('/', (req, res) => {
   res.render('home.ejs')
 })
 
 
+//--------------------
+//Listener
+//--------------------
 app.listen(PORT, () => {
   console.log("listening on port: ", PORT);
 })

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../partials/header.ejs %>
+    <div class="container">
+      <h1>index after login</h1>
+      <ul>
+        <% for (let i = 0; i < tea.length; i++) { %>
+          <li><a href="/tea/<%=tea[i].id%>"><%=tea[i].name%></a> - <%=tea[i].type%></li>
+        <% } %>
+      </ul>
+      <a href="/tea/new">Create New Tea</a>
+    </div>
+
+    <% include ../partials/footer.ejs %>
+  </body>
+</html>
