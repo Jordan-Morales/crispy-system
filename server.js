@@ -37,7 +37,7 @@ cloudinary.config({
 });
 
 // Server-side Image Uploader //
-// cloudinary.uploader.upload("public/  .jpg",
+// cloudinary.uploader.upload("public/_.jpg",
 // function(result) { console.log(result) })
 
 //--------------------
