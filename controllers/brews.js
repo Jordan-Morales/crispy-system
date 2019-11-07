@@ -8,9 +8,12 @@ const User = require('../models/users.js');
 //brew pathway
 router.get('/brews/', (req, res) => {
   if (req.session.username) {
-      res.render('./brews/index.ejs', {
-        currentUser: req.session.username
-      })
+    User.find({username: req.session.username}, (error, thisUser) => {
+        res.render('./brews/index.ejs', {
+          brewUser: thisUser,
+          currentUser: req.session.username
+        })
+    })
 } else {
   res.redirect('/')
 }
