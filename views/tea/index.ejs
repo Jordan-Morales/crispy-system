@@ -6,7 +6,7 @@
 <body>
   <% include ../partials/header.ejs %>
   <div class="container">
-    <h1>index after login</h1>
+    <h1>Our Collection of Tea</h1>
     <div class="row">
       <% for (let i = 0; i < tea.length; i++) { %>
         <div class="col s4">
@@ -15,9 +15,9 @@
               <div class="card-image">
               <a class="grey-text" href="/tea/<%=tea[i].id%>">
                 <img src="https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573026063/um6pa6sicnkx4efcrjue.jpg" alt="<%=tea[i].name%>">
-                <span class="card-title"><%=tea[i].name%></span>
+                <span class="card-title"><%=tea[i].name%></span></a>
               </div>
-              <%=tea[i].name%></a> - <%=tea[i].type%>
+              <%=tea[i].name%> - <%=tea[i].type%>
             </div>
           </div>
         </div>
@@ -29,3 +29,6 @@
     <% include ../partials/footer.ejs %>
   </body>
   </html>
+
+
+                  <a class="btn-floating halfway-fab waves-effect waves-light orange" href=""><i class="material-icons">+</i></a>

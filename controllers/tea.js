@@ -8,17 +8,33 @@ router.get('/seed', (req, res) => {
   Tea.create(
     [
       {
-        name: 'Black',
+        name: 'Assam',
         type: 'Black',
-        origin: 'E'
+        origin: 'India'
       } , {
-        name: 'Green',
+        name: 'Genmaicha',
         type: 'Green',
-        origin: 'A'
+        origin: 'Japan'
       } , {
-        name: 'Red',
-        type: 'Red',
-        origin: 'A'
+        name: 'Green Jade',
+        type: 'Oolong',
+        origin: 'Taiwan'
+      } , {
+        name: 'Emerald Oolong',
+        type: 'Oolong',
+        origin: 'Taiwan'
+      } , {
+        name: 'Dancing Dragon',
+        type: 'Puerh',
+        origin: 'Custom'
+      } , {
+        name: 'Dream Blend',
+        type: 'Herbal',
+        origin: 'Custom'
+      } , {
+        name: 'Dark Forest',
+        type: 'Herbal',
+        origin: 'Custom'
       }
     ],
     (err, data) => {

@@ -2,26 +2,38 @@
 <html lang="en" dir="ltr">
 <head>
   <% include ./partials/head.ejs %>
+  <style>
+    body {
+      background-image: url(https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573100580/oriento-tJU1GxQLy4o-unsplash_uxivqb.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container {
+      background-color: rgba(153, 187, 136, 0.6);
+    }
+  </style>
 </head>
 <body>
   <% include ./partials/preheader.ejs %>
   <div class="container">
       <h1>Tea-licious</h1>
       <h4>A Tea Resource</h1>
+        <div class="divider"></div>
+        <div class="section">
+          Welcome to this tea collection, we want you to enjoy your experience searching for new teas and forming your own favourite collection. <br/>
+          <br/>
+          Please sign up and login to join our growing community.
+        </div>
+        <div class="divider"></div>
     <div class="row">
       <div class="col m6">
-        <span class="flow-text"><a href="sessions/new">Log In</a></span>
+        <span class="flow-text"><a class ="btn-large orange" href="sessions/new">Log In</a></span>
       </div>
       <div class="col m6">
-        <span class="flow-text"><a href="users/new">Sign Up</a></span>
+        <span class="flow-text"><a class ="btn-large orange" href="users/new">Sign Up</a></span>
       </div>
     </div>
-    <div class="divider"/>
-    <div class="section">
-      <p></p>
-    </div>
   </div>
-
   <% include ./partials/footer.ejs %>
 </body>
 </html>
