@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Tea = require('../models/tea.js');
+const User = require('../models/users.js');
 
 // Seed Data
 
@@ -74,6 +75,21 @@ router.post('/tea', (req, res) => {
   });
 });
 
+//saving a tea
+router.post('/addFav/:id', (req, res) => {
+  User.find({username: req.session.username}, (err, foundUser) => {
+    Tea.findById(req.params.id, (err, thisTea) => {
+      Tea.create(thisTea, (err, userFavTea) => {
+        console.log(foundUser);
+        foundUser[0].favs.push(userFavTea);
+        foundUser[0].save((err, data) => {
+          res.redirect('/tea/')
+        });
+      });
+    });
+  });
+});
+
 // Show Route
 
 router.get('/tea/:id', (req, res) => {
@@ -116,6 +132,7 @@ router.delete('/tea/:id', (req, res) => {
     res.redirect('/tea')
   });
 });
+
 
 
 module.exports = router;

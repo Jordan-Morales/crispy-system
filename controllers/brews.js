@@ -19,5 +19,24 @@ router.get('/brews/', (req, res) => {
 }
 });
 
+router.get('/brews/tea/:id', (req, res) => {
+    if (req.session.username) {
+      User.findOne({'favs._id' : req.params.id}, (error, thisUserFavs) => {
+        console.log(thisUserFavs);
+        let thisFavs = thisUserFavs.favs;
+        console.log(thisFavs);
+        console.log(req.params.id);
+        let index = thisFavs.indexOf(req.params.id);
+        console.log(index);
+          res.render('./brews/show.ejs', {
+            tea: thisUserFavs,
+            index: index
+          })
+      })
+    } else {
+      res.redirect('/')
+    }
+});
+
 
 module.exports = router;

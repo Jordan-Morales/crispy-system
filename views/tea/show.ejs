@@ -9,6 +9,9 @@
     <h1>More Details on <%=tea.name%></h1>
     <div class="container">
       <h4>Tea</h4>
+      <form action="/addFav/<%=tea.id%>?_method=POST" method="POST">
+        <input type="submit" value="Add Fav">
+      </form><br/>
       Name: <%=tea.name%><br/>
       Type: <%=tea.type%><br/>
       Origin: <%=tea.origin%><br/>

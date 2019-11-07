@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <% include ../partials/head.ejs %>
-  </head>
-  <body>
-    <% include ../partials/header.ejs %>
-    <div class="container">
-      <h1><%=currentUser%>'s Brews</h1>
-      <div class="section">
-        This is the current user: <%=brewUser.name%>
-
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body>
+  <% include ../partials/header.ejs %>
+  <div class="container">
+    <h1><%=currentUser%>'s Brews</h1>
+    <div class="section">
+      This is the current user: <%=brewUser[0].name%>
+      <div class="row">
+        <% for (let i = 0; i < brewUser[0].favs.length; i++) { %>
+          <div class="col s4">
+            <div class="card light-green darken-2">
+              <div class="card-image">
+                <a class="grey-text" href="/brews/tea/<%=brewUser[0].favs[i].id%>">
+                  <img src="https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573026063/um6pa6sicnkx4efcrjue.jpg" alt="<%=brewUser[0].favs[i].name%>">
+                  <span class="card-title shadow"><%=brewUser[0].favs[i].name%></span></a>
+                </div>
+                <div class="card-content white-text">
+                  Name: <%=brewUser[0].favs[i].name%> <br/> Type: <%=brewUser[0].favs[i].type%>
+                </div>
+              </div>
+            </div>
+            <% } %>
+            </div>
+        </div>
       </div>
-    </div>
-    <% include ../partials/footer.ejs %>
-  </body>
-</html>
+      <% include ../partials/footer.ejs %>
+    </body>
+    </html>
