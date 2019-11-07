@@ -9,17 +9,18 @@
       background-size: cover;
     }
     .container {
-      background-color: rgba(153, 187, 136, 0.6);
+      text-shadow: 1px 1px black;
+      background-color: rgba(102, 187, 106, 0.75);
     }
   </style>
 </head>
 <body>
   <% include ./partials/preheader.ejs %>
-  <div class="container">
+  <div class="container white-text">
       <h1>Tea-licious</h1>
       <h4>A Tea Resource</h1>
         <div class="divider"></div>
-        <div class="section">
+        <div class="section flow-text">
           Welcome to this tea collection, we want you to enjoy your experience searching for new teas and forming your own favourite collection. <br/>
           <br/>
           Please sign up and login to join our growing community.
@@ -27,10 +28,10 @@
         <div class="divider"></div>
     <div class="row">
       <div class="col m6">
-        <span class="flow-text"><a class ="btn-large orange" href="sessions/new">Log In</a></span>
+        <span class="flow-text"><a class ="btn-large green darken-4" href="sessions/new">Log In</a></span>
       </div>
       <div class="col m6">
-        <span class="flow-text"><a class ="btn-large orange" href="users/new">Sign Up</a></span>
+        <span class="flow-text"><a class ="btn-large green darken-4" href="users/new">Sign Up</a></span>
       </div>
     </div>
   </div>

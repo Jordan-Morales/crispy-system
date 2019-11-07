@@ -3,3 +3,15 @@
 body {
   text-align: center;
 }
+
+.teaShow {
+  height: 20vw;
+  width: auto;
+}
+
+.card {
+  box-shadow: 4px 4px lightgrey;
+}
+.shadow{
+  text-shadow: 2px 2px black;
+}
