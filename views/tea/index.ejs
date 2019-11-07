@@ -11,12 +11,13 @@
       <% for (let i = 0; i < tea.length; i++) { %>
         <div class="col s4">
           <div class="card small blue-grey">
-            <div class="card-content white-text">
+
               <div class="card-image">
               <a class="grey-text" href="/tea/<%=tea[i].id%>">
                 <img src="https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573026063/um6pa6sicnkx4efcrjue.jpg" alt="<%=tea[i].name%>">
                 <span class="card-title"><%=tea[i].name%></span></a>
               </div>
+              <div class="card-content white-text">
               <%=tea[i].name%> - <%=tea[i].type%>
             </div>
           </div>
