@@ -23,7 +23,8 @@ mongoose.connect( MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: tru
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI, '||||', CLOUDINARY_URL));
+db.on('connected', () => console.log('mongo connected'))
+// ; MONGODB_URI, '||||', CLOUDINARY_URL
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //--------------------

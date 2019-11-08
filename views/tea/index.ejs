@@ -6,16 +6,19 @@
 <body>
   <% include ../partials/header.ejs %>
   <div class="container">
-    <h1>Our Collection of Tea</h1>
+    <h1>All Tea's in Our Collection</h1>
     <div class="row">
       <% for (let i = 0; i < tea.length; i++) { %>
         <div class="col s4">
-          <div class="card light-green darken-2">
+          <div class="card light-green darken-2 z-depth-3">
               <div class="card-image">
               <a class="grey-text" href="/tea/<%=tea[i].id%>">
-                <img src="<%=tea[i].img%>" alt="<%=tea[i].name%>">
+                <img class="responsive-img" src="<%=tea[i].img%>" alt="<%=tea[i].name%>">
                 <span class="card-title shadow"><%=tea[i].name%></span></a>
               </div>
+              <form action="/addFav/<%=tea[i].id%>?_method=POST" method="POST">
+                <input type="submit" value="+Fav"class="btn-floating fab waves-effect waves-light teal"><i class="material-icons"></i></input>
+              </form>
               <div class="card-content white-text">
               Name: <%=tea[i].name%> <br/> Type: <%=tea[i].type%>
             </div>
