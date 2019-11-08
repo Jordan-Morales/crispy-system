@@ -2,6 +2,7 @@
 
 body {
   text-align: center;
+  background-color: rgb(182, 213, 179);
 }
 
 .teaShow {
@@ -10,7 +11,13 @@ body {
 }
 
 .card {
-  box-shadow: 4px 4px lightgrey;
+  box-shadow: 4px 4px darkgrey;
+
+}
+
+.card-image {
+  height: 15vw;
+  overflow: hidden;
 }
 .shadow{
   text-shadow: 2px 2px black;

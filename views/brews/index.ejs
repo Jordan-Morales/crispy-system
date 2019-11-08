@@ -6,16 +6,15 @@
 <body>
   <% include ../partials/header.ejs %>
   <div class="container">
-    <h1><%=currentUser%>'s Brews</h1>
+    <h1><%=brewUser[0].name%>'s Brews</h1>
     <div class="section">
-      This is the current user: <%=brewUser[0].name%>
       <div class="row">
         <% for (let i = 0; i < brewUser[0].favs.length; i++) { %>
           <div class="col s4">
             <div class="card light-green darken-2">
               <div class="card-image">
                 <a class="grey-text" href="/brews/tea/<%=brewUser[0].favs[i].id%>">
-                  <img src="https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573026063/um6pa6sicnkx4efcrjue.jpg" alt="<%=brewUser[0].favs[i].name%>">
+                  <img src="<%=brewUser[0].favs[i].img%>" alt="<%=brewUser[0].favs[i].name%>">
                   <span class="card-title shadow"><%=brewUser[0].favs[i].name%></span></a>
                 </div>
                 <div class="card-content white-text">

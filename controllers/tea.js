@@ -11,31 +11,38 @@ router.get('/seed', (req, res) => {
       {
         name: 'Assam',
         type: 'Black',
-        origin: 'India'
+        origin: 'India',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573179810/assamblack_jm1xbi.jpg'
       } , {
         name: 'Genmaicha',
         type: 'Green',
-        origin: 'Japan'
+        origin: 'Japan',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573177757/Genmaicha_mctzok.jpg'
       } , {
         name: 'Green Jade',
         type: 'Oolong',
-        origin: 'Taiwan'
+        origin: 'Taiwan',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/oolong_hru8l5.jpg'
       } , {
         name: 'Emerald Oolong',
         type: 'Oolong',
-        origin: 'Taiwan'
+        origin: 'Taiwan',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/oolong_hru8l5.jpg'
       } , {
         name: 'Dancing Dragon',
         type: 'Puerh',
-        origin: 'Custom'
+        origin: 'Custom',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/Puerh_Tea_udcflm.jpg'
       } , {
         name: 'Dream Blend',
         type: 'Herbal',
-        origin: 'Custom'
+        origin: 'Custom',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/herbal_tea_scifr7.jpg'
       } , {
         name: 'Dark Forest',
         type: 'Herbal',
-        origin: 'Custom'
+        origin: 'Custom',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/blacktea_o19xq9.jpg'
       }
     ],
     (err, data) => {
