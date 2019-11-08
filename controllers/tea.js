@@ -75,7 +75,7 @@ router.post('/tea', (req, res) => {
   });
 });
 
-//saving a tea
+//saving a tea to a user's profile
 router.post('/addFav/:id', (req, res) => {
   User.find({username: req.session.username}, (err, foundUser) => {
     Tea.findById(req.params.id, (err, thisTea) => {

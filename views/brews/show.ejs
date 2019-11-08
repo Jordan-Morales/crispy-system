@@ -5,12 +5,12 @@
 </head>
 <body>
   <% include ../partials/header.ejs %>
-  <h1>More Details on <%=tea.fav[index].name%></h1>
+  <h1><%=user.name%>'s <%=tea[0].name%></h1>
   <div class="container">
     <h4>Tea</h4>
-    Name: <%=tea.name%><br/>
-    Type: <%=tea.type%><br/>
-    Origin: <%=tea.origin%><br/>
+    Name: <%=tea[0].name%><br/>
+    Type: <%=tea[0].type%><br/>
+    Origin: <%=tea[0].origin%><br/>
     <img class="teaShow" src="https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573100575/manki-kim-L82-kkEBOd0-unsplash_ud6sle.jpg" alt="">
   </div>
 
