@@ -5,13 +5,13 @@
 </head>
 <body>
   <% include ../partials/header.ejs %>
-  <h1><%=user.name%>'s <%=tea[0].name%></h1>
-  <div class="container">
+  <h4><%=user.name%>'s <%=tea[0].name%></h4>
+  <div class="container flow-text">
     <h4>Tea</h4>
     Name: <%=tea[0].name%><br/>
     Type: <%=tea[0].type%><br/>
     Origin: <%=tea[0].origin%><br/>
-    <img class="teaShow" src="<%=tea[0].img%>" alt="">
+    <img class="teaShow individual" src="<%=tea[0].img%>" alt="">
   </div>
 
   <div class="divider"></div>

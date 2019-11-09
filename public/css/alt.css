@@ -16,10 +16,16 @@ body {
   bottom: 0;
   width: 100%;
 }
+.card {
+  border: 2px solid green;
+  border-radius: 10px;
+}
 
 .card-image {
   height: 15vw;
   overflow: hidden;
+  border-radius: 10px;
+
 }
 .shadow{
   text-shadow: 2px 2px black;
@@ -27,4 +33,9 @@ body {
 
 h1 {
   font-family: 'Sedgwick Ave', cursive;
+}
+
+.individual {
+  border: 2px solid green;
+  border-radius: 10px;
 }
