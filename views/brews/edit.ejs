@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>user tea edit page</h1>
+    <% include ../partials/header.ejs %>
+
+    <h4>Edit Your Tea</h4>
+
+    <div class="container flow-text">
+      <form action="/brews/tea/<%=tea.id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=tea[0].name%>">
+        Type: <input type="text" name="type" value="<%=tea[0].type%>">
+        Origin: <input type="text" name="origin" value="<%=tea[0].origin%>">
+        <input type="submit" value="Edit Your Tea">
+      </form>
+    </div>
+
+    <% include ../partials/footer.ejs %>
   </body>
 </html>

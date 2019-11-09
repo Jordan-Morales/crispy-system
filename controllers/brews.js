@@ -34,26 +34,30 @@ router.get('/brews/tea/:id', (req, res) => {
   }
 });
 
-// router.get('/brews/tea/:id/edit', (req, res) => {
-//   if (req.session.username) {
-//     User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
-//       let userFavs = foundUser.favs;
-//       let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
-//       res.render('brews/tea/edit.ejs', {
-//         tea: userTeaFound
-//       });
-//     });
-//   } else {
-//     res.redirect('/')
-//   }
-// });
-//
-// // router.put('/brews/tea/:id', (req, res) => {
-// //   User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
-// //   Tea.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-// //     res.redirect('/brews/tea/' + updatedModel.id);
-// //   });
-// // });
+router.get('/brews/tea/:id/edit', (req, res) => {
+  if (req.session.username) {
+    User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
+      let userFavs = foundUser.favs;
+      let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
+      console.log(userTeaFound);
+      res.render('brews/edit.ejs', {
+        tea: userTeaFound
+      });
+    });
+  } else {
+    res.redirect('/')
+  }
+});
+
+router.put('/brews/tea/:id', (req, res) => {
+  User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
+    console.log(err);
+  let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
+  Tea.findByIdAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
+    res.redirect('/brews/tea/' + updatedModel.id);
+    });
+  });
+});
 
 
 module.exports = router;
