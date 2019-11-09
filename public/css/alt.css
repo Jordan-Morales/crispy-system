@@ -3,6 +3,7 @@
 body {
   text-align: center;
   background-color: rgb(182, 213, 179);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .teaShow {
@@ -22,4 +23,8 @@ body {
 }
 .shadow{
   text-shadow: 2px 2px black;
+}
+
+h1 {
+  font-family: 'Sedgwick Ave', cursive;
 }
