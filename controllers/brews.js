@@ -49,15 +49,15 @@ router.get('/brews/tea/:id/edit', (req, res) => {
   }
 });
 
-router.put('/brews/tea/:id', (req, res) => {
-  User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
-    console.log(err);
-  let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
-  Tea.findByIdAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
-    res.redirect('/brews/tea/' + updatedModel.id);
-    });
-  });
-});
+// router.put('/brews/tea/:id', (req, res) => {
+//   User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
+//     console.log(err);
+//   let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
+//   Tea.findByIdAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
+//     res.redirect('/brews/tea/' + updatedModel.id);
+//     });
+//   });
+// });
 
 
 module.exports = router;
