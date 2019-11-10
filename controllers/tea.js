@@ -6,6 +6,11 @@ const User = require('../models/users.js');
 // Seed Data
 
 router.get('/seed', (req, res) => {
+  //clears collection prior to inputing a new seeded data, keeps id's fresh from user to user, clears any edits a user may have made globally
+  //current work around to id relationship issue
+  Tea.remove({}, (err) => {
+    console.log('collection removed');
+  })
   Tea.create(
     [
       {
@@ -87,7 +92,6 @@ router.post('/addFav/:id', (req, res) => {
   User.find({username: req.session.username}, (err, foundUser) => {
     Tea.findById(req.params.id, (err, thisTea) => {
       Tea.create(thisTea, (err, userFavTea) => {
-        console.log(foundUser);
         foundUser[0].favs.push(userFavTea);
         foundUser[0].save((err, data) => {
           res.redirect('/tea/')
@@ -139,7 +143,5 @@ router.delete('/tea/:id', (req, res) => {
     res.redirect('/tea')
   });
 });
-
-
 
 module.exports = router;

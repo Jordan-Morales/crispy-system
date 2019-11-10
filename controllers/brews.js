@@ -5,7 +5,7 @@ const User = require('../models/users.js');
 
 
 
-//brew pathway
+//brew pathway showing each users favorite brews, stored within their user model
 router.get('/brews/', (req, res) => {
   if (req.session.username) {
     User.find({username: req.session.username}, (error, thisUser) => {
@@ -18,6 +18,7 @@ router.get('/brews/', (req, res) => {
   }
 });
 
+// shows an individual tea
 router.get('/brews/tea/:id', (req, res) => {
   if (req.session.username) {
     User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
@@ -34,6 +35,7 @@ router.get('/brews/tea/:id', (req, res) => {
   }
 });
 
+//allows edits of the individual tea, currently if the id still matches a global object it will update that too, current solution is a reseed at login.
 router.get('/brews/tea/:id/edit', (req, res) => {
   if (req.session.username) {
     User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
@@ -49,15 +51,20 @@ router.get('/brews/tea/:id/edit', (req, res) => {
   }
 });
 
-// router.put('/brews/tea/:id', (req, res) => {
-//   User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
-//     console.log(err);
-//   let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
-//   Tea.findByIdAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
-//     res.redirect('/brews/tea/' + updatedModel.id);
-//     });
-//   });
-// });
+//put route for tea edits
+router.put('/brews/tea/:id', (req, res) => {
+  User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
+  let userFavs = foundUser.favs;
+  let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
+  Tea.findOneAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
+    userFavs.id(req.params.id).remove();
+    userFavs.push(updatedModel);
+    foundUser.save((err, data) => {
+      res.redirect('/brews/tea/' + updatedModel.id);
+    });
+    });
+  });
+});
 
 
 module.exports = router;

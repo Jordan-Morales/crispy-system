@@ -9,7 +9,7 @@
     <h4>Edit Your Tea</h4>
 
     <div class="container flow-text">
-      <form action="/brews/tea/<%=tea.id%>?_method=PUT" method="POST">
+      <form action="/brews/tea/<%=tea[0].id%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=tea[0].name%>">
         Type: <input type="text" name="type" value="<%=tea[0].type%>">
         Origin: <input type="text" name="origin" value="<%=tea[0].origin%>">

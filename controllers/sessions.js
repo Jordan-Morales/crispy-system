@@ -8,7 +8,7 @@ router.get('/sessions/new', (req, res) => {
   res.render('sessions/new.ejs')
 })
 
-//login function
+//login function // directs to seed
 router.post('/sessions', (req, res) => {
   User.findOne({username:req.body.username}, (error, foundUser) => {
     if(foundUser === null){
@@ -17,7 +17,7 @@ router.post('/sessions', (req, res) => {
       const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password)
       if(doesPasswordMatch){
         req.session.username = foundUser.username;
-        res.redirect('/tea');
+        res.redirect('/seed');
       } else {
         res.redirect('sessions/new')
       }
