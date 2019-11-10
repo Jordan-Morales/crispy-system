@@ -4,7 +4,7 @@
 #[Tea-licious App](https://tea-licious.herokuapp.com/)
 
 #### Original Goal:
->I'm thinking if I do the tea one, It has a timer built in for the different teas, you >can select a list of favorite teas, you can share you list public or keep private, >each tea has an info page that tells you about it and where it's from (google maps >fits in here), and finally a special feature would be a green tea preparation >course that gives you a little badge next to your user name and says you learned how >to prep the green tea traditionally.
+>I'm thinking if I do the tea one, It has a timer built in for the different teas, you can select a list of favorite teas, you can share you list public or keep private, each tea has an info page that tells you about it and where it's from (google maps fits in here), and finally a special feature would be a green tea preparation >course that gives you a little badge next to your user name and says you learned how >to prep the green tea traditionally.
 
 *Technologies Used
 
@@ -36,3 +36,5 @@ Individual teas edits are saved within each user's "favs array"
 
 *Unsolved Problems
 > Edit function effects global items instead of just individual item, current solution is to reseed main database at each login.
+> Maintaining minimum sizing for cards.
+> Working on installing a image uploading function, got image upload Cloudinary to work direct directly from code only, never made it to browser uploads.
