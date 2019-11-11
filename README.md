@@ -61,13 +61,12 @@ const userSchema = new mongoose.Schema({
 
 
 #### Goals
-> Would like to add some more content around each tea.
-> Allow users to share teas to a public share page.
->
+> Would like to add some more content around each tea.  
+  Allow users to share teas to a public share page.
 <!-- put some goals or hopes for more to do to this app -->
 
 
 #### Unsolved Problems
-> Edit function effects global items instead of just individual item, current solution is to reseed main database at each login.
-> Maintaining minimum sizing for cards.
-> Working on installing a image uploading function, got image upload Cloudinary to work direct directly from code only, never made it to browser uploads.
+> Edit function effects global items instead of just individual item, current solution is to reseed main database at each login.  
+  Maintaining minimum sizing for cards.  
+  Working on installing a image uploading function, got image upload Cloudinary to work direct directly from code only, never made it to browser uploads.
