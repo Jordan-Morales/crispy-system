@@ -19,12 +19,19 @@ body {
 .card {
   border: 2px solid green;
   border-radius: 10px;
+  min-height: 34vw;
 }
 
 .card-image {
-  height: 15vw;
+
   overflow: hidden;
   border-radius: 10px;
+
+}
+
+img {
+  min-height: 18vw;
+  overflow: hidden;
 
 }
 .shadow{

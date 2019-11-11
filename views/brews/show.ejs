@@ -7,14 +7,13 @@
   <% include ../partials/header.ejs %>
   <h4><%=user.name%>'s <%=tea[0].name%></h4>
   <div class="container flow-text">
-    <h4>Tea</h4>
     Name: <%=tea[0].name%><br/>
     Type: <%=tea[0].type%><br/>
     Origin: <%=tea[0].origin%><br/>
     <img class="teaShow individual" src="<%=tea[0].img%>" alt="">
   </div>
   <div class="section">
-    <a href="/brews/tea/<%=tea[0].id%>/edit">Edit this Tea</a>
+    <a href="/brews/tea/<%=tea[0].id%>/edit" class="btn fab waves-effect waves-light green">Edit this Tea</a>
     <!-- <form action="/brews/tea/<%=tea[0].id%>?_method=DELETE" method="POST">
       <input type="submit" value="Delete">
     </form> -->

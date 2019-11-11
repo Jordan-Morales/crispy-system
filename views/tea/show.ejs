@@ -9,7 +9,7 @@
     <h4>More Details on <%=tea.name%></h4>
     <div class="container flow-text">
       <form action="/addFav/<%=tea.id%>?_method=POST" method="POST">
-        <input type="submit" value="Add Fav">
+        <input type="submit" class="btn blue" value="+ Fav">
       </form><br/>
       Name: <%=tea.name%><br/>
       Type: <%=tea.type%><br/>
@@ -18,9 +18,9 @@
     </div>
     <div class="divider"></div>
     <div class="section">
-      <a href="/tea/<%=tea.id%>/edit">Edit this Tea</a>
+      <a href="/tea/<%=tea.id%>/edit" class="btn green">Edit this Tea</a>
       <form action="/tea/<%=tea.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete">
+        <input type="submit" class="btn red" value="Delete">
       </form>
     </div>
     <div class="divider"></div>
