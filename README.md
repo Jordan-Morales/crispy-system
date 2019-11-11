@@ -26,9 +26,9 @@ Individual teas edits are saved within each user's "favs array"
 
 
 #### Wireframes /  User Stories
->[Wireframe Image 1](https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573455686/20191109_223642_xvnk7y.jpg)
->[Wireframe Image 2](https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573455685/20191109_223632_vldbxn.jpg)
->[Wireframe Image 2](https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573455686/20191109_223619_qnvjfz.jpg)
+>[Wireframe Image 1](https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573455686/20191109_223642_xvnk7y.jpg "Wireframe Image 1")
+>[Wireframe Image 2](https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573455685/20191109_223632_vldbxn.jpg "Wireframe Image 2")
+>[Wireframe Image 2](https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573455686/20191109_223619_qnvjfz.jpg "Wireframe Image 3")
 <!-- pull and edit images to put here -->
 
 
