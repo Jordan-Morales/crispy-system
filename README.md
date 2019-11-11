@@ -50,7 +50,21 @@ const userSchema = new mongoose.Schema({
   favs: [Tea.schema]
 });
 ```
-
+>Taking time to realize it was an array the whole time.
+```javascript
+<h1><%=brewUser[0].name%>'s Brews</h1>
+<div class="section">
+  <div class="row">
+    <% for (let i = 0; i < brewUser[0].favs.length; i++) { %>
+      <div class="col s4">
+        <div class="card light-green darken-2">
+          <div class="card-image">
+            <a class="grey-text" href="/brews/tea/<%=brewUser[0].favs[i].id%>">
+              <img src="<%=brewUser[0].favs[i].img%>" alt="<%=brewUser[0].favs[i].name%>">
+              <span class="black-text shadow"><%=brewUser[0].favs[i].name%></span></a>
+            </div>
+            <div class="card-content white-text">
+```
 
 #### Wireframes /  User Stories
 ![Wireframe Image 1](https://res.cloudinary.com/hvqyfnzvb/image/upload/c_scale,w_500/v1573455686/20191109_223642_xvnk7y.jpg "Wireframe Image 1")
