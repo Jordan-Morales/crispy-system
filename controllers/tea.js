@@ -17,37 +17,50 @@ router.get('/seed', (req, res) => {
         name: 'Assam',
         type: 'Black',
         origin: 'India',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573179810/assamblack_jm1xbi.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573179810/assamblack_jm1xbi.jpg',
+        notes: ''
       } , {
         name: 'Genmaicha',
         type: 'Green',
         origin: 'Japan',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573177757/Genmaicha_mctzok.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573177757/Genmaicha_mctzok.jpg',
+        notes: ''
       } , {
         name: 'Green Jade',
         type: 'Oolong',
         origin: 'Taiwan',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/oolong_hru8l5.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/oolong_hru8l5.jpg',
+        notes: ''
       } , {
         name: 'Emerald Oolong',
         type: 'Oolong',
         origin: 'Taiwan',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/oolong_hru8l5.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/oolong_hru8l5.jpg',
+        notes: ''
       } , {
         name: 'Dancing Dragon',
         type: 'Puerh',
         origin: 'Custom',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/Puerh_Tea_udcflm.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/Puerh_Tea_udcflm.jpg',
+        notes: ''
       } , {
         name: 'Dream Blend',
         type: 'Herbal',
         origin: 'Custom',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/herbal_tea_scifr7.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/herbal_tea_scifr7.jpg',
+        notes: ''
       } , {
         name: 'Dark Forest',
         type: 'Herbal',
         origin: 'Custom',
-        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/blacktea_o19xq9.jpg'
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573176766/blacktea_o19xq9.jpg',
+        notes: ''
+      } , {
+        name: 'Calming Journey',
+        type: 'Herbal',
+        origin: 'Custom',
+        img: 'https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573452492/customtea_kvjxqv.jpg',
+        notes: ''
       }
     ],
     (err, data) => {

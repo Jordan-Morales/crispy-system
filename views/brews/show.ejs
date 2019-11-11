@@ -10,13 +10,15 @@
     Name: <%=tea[0].name%><br/>
     Type: <%=tea[0].type%><br/>
     Origin: <%=tea[0].origin%><br/>
-    <img class="teaShow individual" src="<%=tea[0].img%>" alt="">
+    <img class="teaShow individual" src="<%=tea[0].img%>" alt=""><br/>
+    Notes: <%=tea[0].notes%>
   </div>
   <div class="section">
-    <a href="/brews/tea/<%=tea[0].id%>/edit" class="btn fab waves-effect waves-light green">Edit this Tea</a>
-    <!-- <form action="/brews/tea/<%=tea[0].id%>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete">
-    </form> -->
+    <a href="/brews/tea/<%=tea[0].id%>/edit" class="btn green">Edit this Tea</a>
+
+    <form action="/brews/tea/<%=tea[0].id%>?_method=DELETE" method="POST">
+      <input type="submit" class="btn red" value="Delete">
+    </form>
   </div>
   <div class="divider"></div>
   <% include ../partials/footer.ejs %>
