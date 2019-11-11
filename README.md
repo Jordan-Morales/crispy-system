@@ -8,13 +8,13 @@
 
 #### Technologies Used
 
--CSS - Materialize
--MVC Structure
--Node.js
--Mongoose
--MognoDB
--Express
--EJS, EJS Partials
+  -CSS - Materialize  
+  -MVC Structure  
+  -Node.js  
+  -Mongoose  
+  -MognoDB  
+  -Express  
+  -EJS, EJS Partials  
 
 
 #### Approach Taken

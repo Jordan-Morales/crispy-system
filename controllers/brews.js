@@ -67,4 +67,13 @@ router.put('/brews/tea/:id', (req, res) => {
 });
 
 
+// router.delete('/brews/tea/:id', (req, res) => {
+//   User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
+//     let userFavs = foundUser.favs;
+//     let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
+//     User.deleteOne(userTeaFound);
+//     res.redirect('brews/')
+//   });
+// });
+
 module.exports = router;
