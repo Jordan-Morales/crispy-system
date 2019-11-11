@@ -23,6 +23,33 @@ Then creating users and each user contains an array used for saving their favori
 Global teas can have edits made to them, but they are purged and reseeded at login.
 Individual teas edits are saved within each user's "favs array"
 
+#### Challenges
+
+>Saving a tea to a user's profile
+```javascript
+router.post('/addFav/:id', (req, res) => {
+  User.find({username: req.session.username}, (err, foundUser) => {
+    Tea.findById(req.params.id, (err, thisTea) => {
+      Tea.create(thisTea, (err, userFavTea) => {
+        foundUser[0].favs.push(userFavTea);
+        foundUser[0].save((err, data) => {
+          res.redirect('/tea/')
+        });
+      });
+    });
+  });
+});
+```
+
+>Nesting a Tea Array inside a user
+```javascript
+const userSchema = new mongoose.Schema({
+  username: { type: String, unique: true, required: true},
+  password: { type: String, required: true },
+  name: { type: String, required: true},
+  favs: [Tea.schema]
+});
+```
 
 
 #### Wireframes /  User Stories
@@ -34,6 +61,8 @@ Individual teas edits are saved within each user's "favs array"
 
 
 #### Goals
+> Would like to add some more content around each tea.
+> Allow users to share teas to a public share page.
 >
 <!-- put some goals or hopes for more to do to this app -->
 
