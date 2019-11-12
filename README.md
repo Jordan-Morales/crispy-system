@@ -81,6 +81,4 @@ const userSchema = new mongoose.Schema({
 
 
 #### Unsolved Problems
-> Edit function effects global items instead of just individual item, current solution is to reseed main database at each login.  
-  Maintaining minimum sizing for cards.  
-  Working on installing a image uploading function, got image upload Cloudinary to work direct directly from code only, never made it to browser uploads.
+>Working on installing a image uploading function, got image upload Cloudinary to work direct directly from code only, never made it to browser uploads.

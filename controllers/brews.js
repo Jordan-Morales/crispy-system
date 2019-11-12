@@ -20,9 +20,9 @@ router.get('/brews/', (req, res) => {
 
 router.get('/brews/tea/new', (req, res) => {
   if (req.session.username) {
-    User.find({username: req.session.username}, (error, thisUser) => {
+    User.find({username: req.session.username}, (error, foundUser) => {
       res.render('./brews/new.ejs', {
-        brewUser: thisUser
+        brewUser: foundUser
       })
     })
   } else {
@@ -30,21 +30,22 @@ router.get('/brews/tea/new', (req, res) => {
   }
 });
 //individual create new page
-// router.post('/brews/tea/new', (req, res) => {
-//   User.find(req.session.username, (error, foundUser) => {
-//     console.log(foundUser);
-//   // let userFavs = foundUser.favs;
-//   // console.log(userFavs);
-//   // let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
-//   // Tea.findOneAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
-//   //   userFavs.id(req.params.id).remove();
-//     // userFavs.push(req.body);
-//     // foundUser.save((err, data) => {
-//     //   res.redirect('/brews/');
-//   //   });
-//     // });
-//   });
-// });
+router.post('/brews/tea/new', (req, res) => {
+  if (req.session.username) {
+    User.find({username: req.session.username}, (error, thisUser) => {
+      console.log(thisUser);
+      let userFavs = thisUser[0].favs;
+      userFavs.push(req.body);
+      thisUser[0].save((err, data) => {
+        res.redirect('/brews/');
+      });
+    });
+  } else {
+    res.redirect('/')
+  }
+})
+
+
 // shows an individual tea
 router.get('/brews/tea/:id', (req, res) => {
   if (req.session.username) {
@@ -62,7 +63,7 @@ router.get('/brews/tea/:id', (req, res) => {
   }
 });
 
-//allows edits of the individual tea, currently if the id still matches a global object it will update that too, current solution is a reseed at login.
+//allows edits of the individual tea
 router.get('/brews/tea/:id/edit', (req, res) => {
   if (req.session.username) {
     User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
