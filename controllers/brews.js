@@ -81,17 +81,18 @@ router.get('/brews/tea/:id/edit', (req, res) => {
 //put route for tea edits
 router.put('/brews/tea/:id', (req, res) => {
   User.findOne({'favs._id' : req.params.id}, (error, foundUser) => {
+    // console.log(foundUser);
   let userFavs = foundUser.favs;
-  let userTeaFound = userFavs.filter(userTea => userTea.id === req.params.id);
-  Tea.findOneAndUpdate(userTeaFound, req.body, {new:true}, (err, updatedModel) => {
-    userFavs.id(req.params.id).remove();
-    userFavs.push(updatedModel);
-    foundUser.save((err, data) => {
+  let userTeaFound = userFavs.findIndex(userTea => userTea.id === req.params.id);
+  // console.log(userTeaFound);
+  userFavs.splice(userTeaFound, 1);
+  userFavs.push(req.body);
+  foundUser.save((err, data) => {
       res.redirect('/brews/');
     });
     });
-  });
 });
+
 
 
 
