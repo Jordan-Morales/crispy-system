@@ -82,3 +82,6 @@ const userSchema = new mongoose.Schema({
 
 #### Unsolved Problems
 >Working on installing a image uploading function, got image upload Cloudinary to work direct directly from code only, never made it to browser uploads.
+
+
+### Update
