@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <% include ./partials/head.ejs %>
+  <%- include('./partials/head.ejs'); -%>
   <style>
     body {
       background-image: url(https://res.cloudinary.com/hvqyfnzvb/image/upload/v1573100580/oriento-tJU1GxQLy4o-unsplash_uxivqb.jpg);
@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <% include ./partials/preheader.ejs %>
+  <%- include('./partials/preheader.ejs'); -%>
   <div class="container white-text flow-text">
       <h1>Tea-licious</h1>
       <h4>A Tea Resource</h1>
@@ -35,6 +35,6 @@
       </div>
     </div>
   </div>
-  <% include ./partials/footer.ejs %>
+  <%- include('./partials/footer.ejs'); -%>
 </body>
 </html>

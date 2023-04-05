@@ -1,0 +1,49 @@
+ /* Alt styling sheet - working and linked to head */
+
+body {
+  text-align: center;
+  background-color: rgb(182, 213, 179);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.teaShow {
+  height: 20vw;
+  width: auto;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.card {
+  border: 2px solid green;
+  border-radius: 10px;
+  min-height: 34vw;
+}
+
+.card-image {
+
+  overflow: hidden;
+  border-radius: 10px;
+
+}
+
+img {
+  min-height: 18vw;
+  overflow: hidden;
+
+}
+.shadow{
+  font-weight: bolder;
+  text-shadow: 2px 2px 10px white;
+}
+
+h1 {
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+.individual {
+  border: 2px solid green;
+  border-radius: 10px;
+}
